@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "AfriTrade_backend": {
+      "main": "src/AfriTrade_backend/main.mo",
+      "type": "motoko"
+    },
+    "AfriTrade_frontend": {
+      "dependencies": [
+        "AfriTrade_backend"
+      ],
+      "source": [
+        "src/AfriTrade_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "AfriTrade_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
