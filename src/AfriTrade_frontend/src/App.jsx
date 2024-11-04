@@ -19,8 +19,10 @@ function App() {
       <br />
       <br />
       <form action="#" onSubmit={handleSubmit}>
+        {/* Prompt to enter yourname */}
         <label htmlFor="name">Enter your name: &nbsp;</label>
         <input id="name" alt="Name" type="text" />
+        {/* ClickMe button */}
         <button type="submit">Click Me!</button>
       </form>
       <section id="greeting">{greeting}</section>
