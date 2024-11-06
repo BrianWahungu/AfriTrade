@@ -1,31 +1,21 @@
-import { useState } from 'react';
-import { AfriTrade_backend } from 'declarations/AfriTrade_backend';
+import React from 'react'
+import Navbar from './components/Navbar/Navbar'
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home/Home'
+import Footer from './components/Footer/Footer'
+import Coin from './pages/Coin/Coin'
 
-function App() {
-  const [greeting, setGreeting] = useState('');
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    const name = event.target.elements.name.value;
-    AfriTrade_backend.greet(name).then((greeting) => {
-      setGreeting(greeting);
-    });
-    return false;
-  }
-
+const App = () => {
   return (
-    <main>
-      <img src="/logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#" onSubmit={handleSubmit}>
-        <label htmlFor="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting">{greeting}</section>
-    </main>
-  );
+    <div className='app'>
+      <Navbar/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/coin/:coinId' element={<Coin/>}/>
+      </Routes>
+      <Footer />
+    </div>
+  )
 }
 
-export default App;
+export default App
